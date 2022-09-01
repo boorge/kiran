@@ -58,6 +58,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# Mouse Courser follow
+--------------------------------------------------------------*/
+
+#cursor {
+  position: fixed;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #c55151;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#cursor-border {
+  --size: 50px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #c55151;
+  pointer-events: none;
+  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+    height 0.15s ease-out, background-color 0.15s ease-out;
+  z-index: 999;
+}
+
+/*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
@@ -245,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/hero-bg.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
+  margin-top: -8%;
 }
 @media (min-width: 992px) {
   #hero {

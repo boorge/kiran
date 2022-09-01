@@ -47,7 +47,7 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
 
 
 
-(function () {
+(function() {
   "use strict";
 
   /**

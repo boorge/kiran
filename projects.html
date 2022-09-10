@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services Section Using Bootstrap 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        a,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-services {
+            padding-top: 110px;
+            padding-bottom: 120px;
+            font-family: "Poppins", sans-serif;
+            background-color: #211f24;
+            color: #fff;
+        }
+
+        .section-services .header-section {
+            margin-bottom: 35px;
+        }
+
+        .section-services .header-section .title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-services .header-section .title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 1px;
+            background-color: #f70037;
+        }
+
+        .section-services .header-section .title:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 3px;
+            background-color: #f70037;
+        }
+
+        .section-services .header-section .title span {
+            color: #f70037;
+        }
+
+        .section-services .header-section .description {
+            color: #6f6f71;
+        }
+
+        .section-services .single-service {
+            margin-top: 40px;
+            background-color: #24252a;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+        }
+
+        .section-services .single-service .part-1 {
+            padding: 40px 40px 25px;
+            border-bottom: 2px solid #1d1e23;
+        }
+
+        .section-services .single-service .part-1 i {
+            margin-bottom: 25px;
+            font-size: 50px;
+            color: #f70037;
+        }
+
+        .section-services .single-service .part-1 .title {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.8em;
+        }
+
+        .section-services .single-service .part-2 {
+            padding: 30px 40px 40px;
+        }
+
+        .section-services .single-service .part-2 .description {
+            margin-bottom: 22px;
+            color: #6f6f71;
+            font-size: 14px;
+            line-height: 1.8em;
+        }
+
+        .section-services .single-service .part-2 a {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .section-services .single-service .part-2 a i {
+            margin-right: 10px;
+            color: #f70037;
+        }
+
+        :root {
+            --orchid: #F92672;
+            --br-blue: #66D9EF;
+            --henn1nk: #A6E22E;
+            --spice: #FD971F;
+            --classColour: #FFE792;
+            --parColour: #F8F8F2;
+        }
+
+        body {
+            background-color: #211f24;
+        }
+
+        .loader-container {
+            width: 400px;
+            height: 175px;
+            margin-top: -16.6vh;
+            overflow: hidden;
+        }
+
+        .line {
+            margin-top: 5px
+        }
+
+        .dash {
+            height: 20px;
+            display: inline-block;
+            border-radius: 10px
+        }
+
+        .div {
+            background: var(--orchid);
+        }
+
+        .class-name {
+            background: var(--henn1nk);
+        }
+
+        .class {
+            background: var(--classColour);
+        }
+
+        .par {
+            background: var(--parColour);
+        }
+
+        .exp-40 {
+            animation: expand-40 0.2s linear forwards;
+        }
+
+        .exp-70 {
+            animation: expand-70 0.2s linear forwards;
+        }
+
+        .exp-90 {
+            animation: expand-90 0.2s linear forwards;
+        }
+
+        .exp-110 {
+            animation: expand-110 0.2s linear forwards;
+        }
+
+        .exp-200 {
+            animation: expand-200 0.2s linear forwards;
+        }
+
+        .exp-300 {
+            animation: expand-300 0.2s linear forwards;
+        }
+
+        .line1 .dash-2 {
+            animation-delay: 0.1s;
+        }
+
+        .line1 .dash-3 {
+            animation-delay: 0.2s;
+        }
+
+        .line1 .dash-4 {
+            animation-delay: 0.3s;
+        }
+
+        .line2 {
+            margin-left: 10%;
+        }
+
+        .line2 .dash-1 {
+            animation-delay: 0.4s
+        }
+
+        .line2 .dash-2 {
+            animation-delay: 0.5s
+        }
+
+        .line2 .dash-3 {
+            animation-delay: 0.6s
+        }
+
+        .line3 {
+            margin-left: 20%;
+        }
+
+        .line3 .dash-1 {
+            animation-delay: 0.7s
+        }
+
+        .line4 {
+            margin-left: 20%
+        }
+
+        .line4 .dash-1 {
+            animation-delay: 0.8s
+        }
+
+        .line5 {
+            margin-left: 10%
+        }
+
+        .line5 .dash-1 {
+            animation-delay: 0.85s
+        }
+
+        .line6 .dash-1 {
+            animation-delay: 0.925s
+        }
+
+        .group-1 {
+            animation: scroll 1s linear infinite;
+            animation-delay: 1s;
+            position: relative;
+        }
+
+        .group-2 {
+            animation: scroll 1s linear infinite;
+            animation-delay: 1s;
+            position: relative;
+        }
+
+        .group-2 .line1 .dash-1 {
+            animation: line1dash1 1s linear infinite;
+        }
+
+        .group-2 .line1 .dash-2 {
+            animation: line1dash2 1s linear infinite;
+        }
+
+        .group-2 .line1 .dash-3 {
+            animation: line1dash3 1s linear infinite;
+        }
+
+        .group-2 .line1 .dash-4 {
+            animation: line1dash4 1s linear infinite;
+        }
+
+        .group-2 .line2 .dash-1 {
+            animation: line2dash1 1s linear infinite;
+        }
+
+        .group-2 .line2 .dash-2 {
+            animation: line2dash2 1s linear infinite;
+        }
+
+        .group-2 .line2 .dash-3 {
+            animation: line2dash3 1s linear infinite;
+        }
+
+        .group-2 .line3 .dash-1 {
+            animation: line3dash1 1s linear infinite;
+        }
+
+        .group-2 .line4 .dash-1 {
+            animation: line4dash1 1s linear infinite;
+        }
+
+        .group-2 .line5 .dash-1 {
+            animation: line5dash1 1s linear infinite;
+        }
+
+        .group-2 .line6 .dash-1 {
+            animation: line6dash1 1s linear infinite;
+        }
+
+        /*keyframes for group2*/
+        @keyframes line1dash1 {
+            0% {
+                width: 0px;
+            }
+
+            20% {
+                width: 40px;
+            }
+
+            100% {
+                width: 40px;
+            }
+        }
+
+        @keyframes line1dash2 {
+            0% {
+                width: 0px;
+            }
+
+            10% {
+                width: 0px;
+            }
+
+            30% {
+                width: 70px;
+            }
+
+            100% {
+                width: 70px;
+            }
+        }
+
+        @keyframes line1dash3 {
+            0% {
+                width: 0px;
+            }
+
+            20% {
+                width: 0px;
+            }
+
+            40% {
+                width: 110px;
+            }
+
+            100% {
+                width: 110px;
+            }
+        }
+
+        @keyframes line1dash4 {
+            0% {
+                width: 0px;
+            }
+
+            30% {
+                width: 0px;
+            }
+
+            50% {
+                width: 70px
+            }
+
+            100% {
+                width: 70px;
+            }
+        }
+
+        @keyframes line2dash1 {
+            0% {
+                width: 0px;
+            }
+
+            40% {
+                width: 0px;
+            }
+
+            60% {
+                width: 40px
+            }
+
+            100% {
+                width: 40px;
+            }
+        }
+
+        @keyframes line2dash2 {
+            0% {
+                width: 0px;
+            }
+
+            50% {
+                width: 0px;
+            }
+
+            70% {
+                width: 70px
+            }
+
+            100% {
+                width: 70px;
+            }
+        }
+
+        @keyframes line2dash3 {
+            0% {
+                width: 0px;
+            }
+
+            60% {
+                width: 0px;
+            }
+
+            80% {
+                width: 90px
+            }
+
+            100% {
+                width: 90px;
+            }
+        }
+
+        @keyframes line3dash1 {
+            0% {
+                width: 0px;
+            }
+
+            60% {
+                width: 0px;
+            }
+
+            80% {
+                width: 300px
+            }
+
+            100% {
+                width: 300px;
+            }
+        }
+
+        @keyframes line4dash1 {
+            0% {
+                width: 0px;
+            }
+
+            70% {
+                width: 0px;
+            }
+
+            90% {
+                width: 200px
+            }
+
+            100% {
+                width: 200px;
+            }
+        }
+
+        @keyframes line5dash1 {
+            0% {
+                width: 0px;
+            }
+
+            75% {
+                width: 0px;
+            }
+
+            85% {
+                width: 40px
+            }
+
+            100% {
+                width: 40px;
+            }
+        }
+
+        @keyframes line6dash1 {
+            0% {
+                width: 0px;
+            }
+
+            85% {
+                width: 0px;
+            }
+
+            100% {
+                width: 40px;
+            }
+        }
+
+        @keyframes expand-40 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 40px;
+            }
+        }
+
+        @keyframes expand-70 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 70px;
+            }
+        }
+
+        @keyframes expand-90 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 90px;
+            }
+        }
+
+        @keyframes expand-110 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 110px;
+            }
+        }
+
+        @keyframes expand-200 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 200px;
+            }
+        }
+
+        @keyframes expand-300 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 300px;
+            }
+        }
+
+        @keyframes scroll {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: -175px;
+            }
+        }
+
+        /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+        #footer {
+            background: #f7f8f9;
+            color: #45505b;
+            font-size: 14px;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        #footer h3 {
+            font-size: 36px;
+            font-weight: 700;
+            position: relative;
+            font-family: "Poppins", sans-serif;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        #footer p {
+            font-size: 15;
+            font-style: italic;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        #footer .social-links {
+            margin: 0 0 40px 0;
+        }
+
+        #footer .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: #c55151;
+            color: #fff;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+        }
+
+        #footer .social-links a:hover {
+            background: #0678e3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #footer .copyright {
+            margin: 0 0 5px 0;
+        }
+
+        #footer .credits {
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <section class="section-services">
+        <div class="loader-container">
+
+            <div class="group-1">
+                <div class="line line1">
+                    <div class="dash dash-1 exp-40 div"></div>
+                    <div class="dash dash-2 exp-70 class-name"></div>
+                    <div class="dash dash-3 exp-110 class"></div>
+                    <div class="dash dash-4 exp-70 class"></div>
+                </div>
+                <div class="line line2">
+                    <div class="dash dash-1 exp-40 div"></div>
+                    <div class="dash dash-2 exp-70 class-name"></div>
+                    <div class="dash dash-3 exp-90 class"></div>
+                </div>
+                <div class="line line3">
+                    <div class="dash dash-1 exp-300 par"></div>
+                </div>
+                <div class="line line4">
+                    <div class="dash dash-1 exp-200 par"></div>
+                </div>
+                <div class="line line5">
+                    <div class="dash dash-1 exp-40 div"></div>
+                </div>
+                <div class="line line6">
+                    <div class="dash dash-1 exp-40 div"></div>
+                </div>
+            </div>
+
+
+            <div class="group-2">
+                <div class="line line1">
+                    <div class="dash dash-1 div"></div>
+                    <div class="dash dash-2 class-name"></div>
+                    <div class="dash dash-3 class"></div>
+                    <div class="dash dash-4 class"></div>
+                </div>
+                <div class="line line2">
+                    <div class="dash dash-1 div"></div>
+                    <div class="dash dash-2 exp70 class-name"></div>
+                    <div class="dash dash-3 exp90 class"></div>
+                </div>
+                <div class="line line3">
+                    <div class="dash dash-1 par"></div>
+                </div>
+                <div class="line line4">
+                    <div class="dash dash-1 par"></div>
+                </div>
+                <div class="line line5">
+                    <div class="dash dash-1 div"></div>
+                </div>
+                <div class="line line6">
+                    <div class="dash dash-1 div"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="header-section">
+                        <h2 class="title">Exclusive <span>Projects</span></h2>
+                        <p class="description">Success seems to be connected with action. Successful people keep moving.
+                            They make mistakes, but they don't quit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fab fa-500px"></i>
+                            <h3 class="title">Covid-19 Tracking Web Apllication</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">A tracking app for tracking covid-19 cases around the world. also
+                                track cases any contry.</p>
+                            <a href="https://github.com/borgekiran/Covid-19-Tracking"><i
+                                    class="fas fa-arrow-circle-right"></i>See Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+
+
+
+
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fab fa-angellist"></i>
+                            <h3 class="title">Online chat may refer to any kind communication</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">Express delivery inno service effective logistics solution for
+                                delivery of small cargo delivery service.</p>
+                            <a href="#"><i class="fas fa-arrow-circle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fas fa-award"></i>
+                            <h3 class="title">Service provider provide organizations consulting</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">Express delivery inno service effective logistics solution for
+                                delivery of small cargo delivery service.</p>
+                            <a href="#"><i class="fas fa-arrow-circle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fab fa-asymmetrik"></i>
+                            <h3 class="title">Express delivery innovative Design service</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">Express delivery inno service effective logistics solution for
+                                delivery of small cargo delivery service.</p>
+                            <a href="#"><i class="fas fa-arrow-circle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <h3 class="title">Provide solutions and services to end users</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">Express delivery inno service effective logistics solution for
+                                delivery of small cargo delivery service.</p>
+                            <a href="#"><i class="fas fa-arrow-circle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <i class="fab fa-canadian-maple-leaf"></i>
+                            <h3 class="title">This broad term incorporates all IT businesses</h3>
+                        </div>
+                        <div class="part-2">
+                            <p class="description">Express delivery inno service effective logistics solution for
+                                delivery of small cargo delivery service.</p>
+                            <a href="#"><i class="fas fa-arrow-circle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <h3>Kiran Borge</h3>
+            <p>Thank You... for seeing my profile</p>
+            <div class="social-links">
+                <a href="https://twitter.com/borgetech" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/borgetech" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/borgetech/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.github.com/borgekiran" class="google-plus"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/kiran-borge" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="#">Kiran Borge</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+</body>
+
+</html>

@@ -340,12 +340,56 @@ h6 {
   line-height: 56px;
   color: #211f24;
   text-transform: uppercase;
-  color: #45505b;
-  transition: 0.3s;
 }
-
-#hero h1:hover {
-  color: rgb(15, 15, 15);
+.first:hover{
+  color: #c55151;
+  filter: blur(3px);
+  padding:2px 0px 0px 4px;
+}
+.sec:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.thir:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.for:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.fiv:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.six:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.sev:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.eig:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.nin:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
+}
+.ten:hover{
+  color: #c55151;
+   filter: blur(3px);
+   padding:2px 0px 0px 4px;
 }
 
 #hero p {
@@ -1074,6 +1118,7 @@ main {
   text-align: center;
   padding: 30px 0;
 }
+
 #footer h3 {
   font-size: 36px;
   font-weight: 700;

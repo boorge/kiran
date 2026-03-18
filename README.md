@@ -1,4 +1,3 @@
-# My Portfolio
 
 # Home Page :
 <img width="1917" height="947" alt="image" src="https://github.com/user-attachments/assets/af6f5361-42e0-4ac2-88fb-756714a8c0cb" />
